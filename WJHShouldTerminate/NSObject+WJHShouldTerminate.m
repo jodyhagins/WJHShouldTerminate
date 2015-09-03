@@ -7,13 +7,13 @@
 
 #import "NSObject+WJHShouldTerminate.h"
 #import "WJHShouldTerminate.h"
-#import <objc/runtime.h>
+@import WJHAssocObj;
 
 @implementation NSObject (WJHShouldTerminate)
 
 + (void)wjh_setBlock:(void (^)(WJHShouldTerminate *))block withKey:(void*)key {
     id token = block ? [WJHShouldTerminate registerBlock:block] : nil;
-    objc_setAssociatedObject(self, key, token, OBJC_ASSOCIATION_RETAIN);
+    WJHAssociateStrongly(self, key, token, YES);
 }
 
 + (void)wjh_setShouldTerminateBlock:(void (^)(WJHShouldTerminate *))block {

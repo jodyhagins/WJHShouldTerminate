@@ -13,10 +13,12 @@
 		C8B6C2D11B97AC4D00D92BE6 /* WJHShouldTerminateToken.h in Headers */ = {isa = PBXBuildFile; fileRef = C8B6C2CF1B97AC4D00D92BE6 /* WJHShouldTerminateToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8B6C2D21B97AC4D00D92BE6 /* WJHShouldTerminateToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B6C2D01B97AC4D00D92BE6 /* WJHShouldTerminateToken.m */; };
 		C8B6C2D41B97AD1B00D92BE6 /* WJHShouldTerminate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B6C2D31B97AD1B00D92BE6 /* WJHShouldTerminate.m */; };
-		C8B6C2D71B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C8B6C2D51B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C8B6C2D71B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C8B6C2D51B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.h */; };
 		C8B6C2D81B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B6C2D61B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.m */; };
 		C8B6C2DB1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8B6C2D91B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8B6C2DC1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B6C2DA1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.m */; };
+		C8B6C2F51B9818E900D92BE6 /* WJHAssocObj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B6C2F41B9818E900D92BE6 /* WJHAssocObj.framework */; };
+		C8B6C2F61B9818FF00D92BE6 /* WJHAssocObj.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C8B6C2F41B9818E900D92BE6 /* WJHAssocObj.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,19 @@
 			remoteInfo = WJHShouldTerminate;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C8B6C2F11B98171700D92BE6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				C8B6C2F61B9818FF00D92BE6 /* WJHAssocObj.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C8B6C2B31B97AAD000D92BE6 /* WJHShouldTerminate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WJHShouldTerminate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +58,7 @@
 		C8B6C2D61B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WJHShouldTerminateObserver.m; sourceTree = "<group>"; };
 		C8B6C2D91B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WJHShouldTerminate.h"; sourceTree = "<group>"; };
 		C8B6C2DA1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WJHShouldTerminate.m"; sourceTree = "<group>"; };
+		C8B6C2F41B9818E900D92BE6 /* WJHAssocObj.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WJHAssocObj.framework; path = Carthage/Build/Mac/WJHAssocObj.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B6C2F51B9818E900D92BE6 /* WJHAssocObj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +86,7 @@
 			children = (
 				C8B6C2B51B97AAD000D92BE6 /* WJHShouldTerminate */,
 				C8B6C2C21B97AAD000D92BE6 /* WJHShouldTerminateTests */,
+				C8B6C2F71B98193D00D92BE6 /* Frameworks */,
 				C8B6C2B41B97AAD000D92BE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,15 +103,15 @@
 		C8B6C2B51B97AAD000D92BE6 /* WJHShouldTerminate */ = {
 			isa = PBXGroup;
 			children = (
+				C8B6C2D91B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.h */,
+				C8B6C2DA1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.m */,
 				C8B6C2B81B97AAD000D92BE6 /* WJHShouldTerminate.h */,
 				C8B6C2D31B97AD1B00D92BE6 /* WJHShouldTerminate.m */,
-				C8B6C2B61B97AAD000D92BE6 /* Supporting Files */,
 				C8B6C2CF1B97AC4D00D92BE6 /* WJHShouldTerminateToken.h */,
 				C8B6C2D01B97AC4D00D92BE6 /* WJHShouldTerminateToken.m */,
 				C8B6C2D51B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.h */,
 				C8B6C2D61B97AD6F00D92BE6 /* _WJHShouldTerminateObserver.m */,
-				C8B6C2D91B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.h */,
-				C8B6C2DA1B97B0DF00D92BE6 /* NSObject+WJHShouldTerminate.m */,
+				C8B6C2B61B97AAD000D92BE6 /* Supporting Files */,
 			);
 			path = WJHShouldTerminate;
 			sourceTree = "<group>";
@@ -121,6 +139,14 @@
 				C8B6C2C41B97AAD000D92BE6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8B6C2F71B98193D00D92BE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8B6C2F41B9818E900D92BE6 /* WJHAssocObj.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +191,7 @@
 				C8B6C2BA1B97AAD000D92BE6 /* Sources */,
 				C8B6C2BB1B97AAD000D92BE6 /* Frameworks */,
 				C8B6C2BC1B97AAD000D92BE6 /* Resources */,
+				C8B6C2F11B98171700D92BE6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -350,6 +377,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WJHShouldTerminate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -367,6 +398,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WJHShouldTerminate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -383,6 +418,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -401,6 +437,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = WJHShouldTerminateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -427,6 +464,7 @@
 				C8B6C2CB1B97AAD000D92BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8B6C2CC1B97AAD000D92BE6 /* Build configuration list for PBXNativeTarget "WJHShouldTerminateTests-OSX" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +473,7 @@
 				C8B6C2CE1B97AAD000D92BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
