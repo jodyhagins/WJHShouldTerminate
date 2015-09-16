@@ -8,11 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/NSApplication.h>
 
-//! Project version number for WJHShouldTerminate.
-FOUNDATION_EXPORT double WJHShouldTerminateVersionNumber;
-
-//! Project version string for WJHShouldTerminate.
-FOUNDATION_EXPORT const unsigned char WJHShouldTerminateVersionString[];
+extern double WJHShouldTerminateVersionNumber();
+extern unsigned char const * WJHShouldTerminateVersionString();
 
 #import <WJHShouldTerminate/WJHShouldTerminateToken.h>
 #import <WJHShouldTerminate/WJHShouldTerminateObserver.h>

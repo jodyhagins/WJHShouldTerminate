@@ -36,6 +36,43 @@
 @property (nonatomic, strong) id myself;
 @end
 
+#pragma mark - Framework Initialization
+
+static double versionNumber;
+double WJHShouldTerminateVersionNumber()
+{
+    return versionNumber;
+}
+
+static char * versionString;
+unsigned char const * WJHShouldTerminateVersionString()
+{
+    return (unsigned char *)versionString;
+}
+
+__attribute__((constructor))
+static void init()
+{
+    @autoreleasepool {
+        NSBundle *bundle = [NSBundle bundleForClass:[WJHShouldTerminate class]];
+        NSString *buildVersion = [bundle objectForInfoDictionaryKey:@"CFBundleVersion"];
+        NSString *releaseVersion = [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        releaseVersion = [NSString stringWithFormat:@"%@ (%@)", releaseVersion, buildVersion];
+
+        versionNumber = [buildVersion doubleValue];
+        versionString = strdup([releaseVersion cStringUsingEncoding:NSUTF8StringEncoding]);
+    }
+}
+
+__attribute__((destructor))
+static void fini()
+{
+    if (versionString) {
+        free(versionString);
+        versionString = NULL;
+    }
+}
+
 
 #pragma mark - WJHShouldTerminate
 

@@ -42,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C852E0811BAA1AF7007D8486 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		C8B6C2B31B97AAD000D92BE6 /* WJHShouldTerminate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WJHShouldTerminate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B6C2B71B97AAD000D92BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8B6C2B81B97AAD000D92BE6 /* WJHShouldTerminate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WJHShouldTerminate.h; sourceTree = "<group>"; };
@@ -76,9 +77,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C852E0801BAA1AD5007D8486 /* Build Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C852E0811BAA1AF7007D8486 /* Version.xcconfig */,
+			);
+			name = "Build Configurations";
+			sourceTree = "<group>";
+		};
 		C8B6C2A91B97AAD000D92BE6 = {
 			isa = PBXGroup;
 			children = (
+				C852E0801BAA1AD5007D8486 /* Build Configurations */,
 				C8B6C2B51B97AAD000D92BE6 /* WJHShouldTerminate */,
 				C8B6C2C21B97AAD000D92BE6 /* WJHShouldTerminateTests */,
 				C8B6C2F71B98193D00D92BE6 /* Frameworks */,
@@ -282,6 +292,7 @@
 /* Begin XCBuildConfiguration section */
 		C8B6C2C71B97AAD000D92BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C852E0811BAA1AF7007D8486 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -298,7 +309,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -320,13 +330,12 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 		C8B6C2C81B97AAD000D92BE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C852E0811BAA1AF7007D8486 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -343,7 +352,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -358,8 +366,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -368,10 +374,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WJHShouldTerminate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -385,10 +388,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WJHShouldTerminate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
