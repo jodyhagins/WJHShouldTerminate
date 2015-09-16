@@ -5,7 +5,7 @@
 
 This is a simple framework with a single purpose: make handling voluntary application shutdown easier.
 
-See [this blogpost](http://cocoaandgrits.blogspot.com/) from some background and a bit more explanation.
+See [this blogpost](http://cocoaandgrits.blogspot.com/2015/09/delayed-shutdown-aka-handling.html) from some background and a bit more explanation.
 
 ## Installation
 [Carthage](https://github.com/carthage/carthage) is the recommended way to install WJHShouldTerminate.  Add the following to your Cartfile:
