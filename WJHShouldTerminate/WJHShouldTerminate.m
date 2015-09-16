@@ -6,13 +6,20 @@
 //
 
 #import "WJHShouldTerminate.h"
-#import "_WJHShouldTerminateObserver.h"
+#import "WJHShouldTerminateObserver.h"
 
 
 #pragma mark - WJHShouldTerminateToken Private API
 
 @interface WJHShouldTerminateToken()
 - (instancetype)initWithShouldTerminate:(WJHShouldTerminate*)shouldTerminate;
+@end
+
+
+#pragma mark - WJHShouldTerminateObserver Private API
+
+@interface WJHShouldTerminateObserver()
+- (instancetype)initWithBlock:(void (^)(WJHShouldTerminate *))block;
 @end
 
 
@@ -48,7 +55,7 @@
 
 + (id)registerBlock:(void (^)(WJHShouldTerminate *))block {
     NSAssert(block != nil, @"Must provide block");
-    return [[_WJHShouldTerminateObserver alloc] initWithBlock:block];
+    return [[WJHShouldTerminateObserver alloc] initWithBlock:block];
 }
 
 - (WJHShouldTerminateToken*)pauseTermination {
@@ -77,8 +84,7 @@
 
 - (instancetype)initWithApplication:(NSApplication*)application {
     if (self = [super init]) {
-        // Hold simple pointers in the has table.  Zeroing-weak references do not work because while they get zeroed out, the count does not get immediately updated, resulting in a linear scan of the hash table to see if all objects have been deallocated.  This is OK since we are only inserting our own token objects, which remove themselves when they dealloc.
-        _pending = [NSHashTable hashTableWithOptions:NSPointerFunctionsOpaqueMemory|NSPointerFunctionsOpaquePersonality];
+        _pending = [NSHashTable weakObjectsHashTable];
         _application = application;
         _myself = self;
     }
@@ -96,12 +102,7 @@
 }
 
 - (void)checkPendingNow {
-    // While the NSHashTable will zero out the weak references, it does not update its count until some time later.  We need an accurate count now.
-    NSUInteger count = 0;
-    for (id __attribute__((unused)) obj in self.pending) {
-        ++count;
-    }
-    if (count == 0) {
+    if ([self.pending anyObject] == nil) {
         [self replyToApplicationShouldTerminate:YES];
     }
 }
@@ -116,12 +117,6 @@
     }
 }
 
-- (void)tokenWillDealloc:(__unsafe_unretained WJHShouldTerminateToken*)token {
-    [self performBlock:^{
-        [self.pending removeObject:token];
-        [self checkPendingNow];
-    }];
-}
 @end
 
 

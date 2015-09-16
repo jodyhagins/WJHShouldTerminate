@@ -9,7 +9,7 @@
 #import "WJHShouldTerminate.h"
 
 @interface WJHShouldTerminate()
-- (void)tokenWillDealloc:(__unsafe_unretained WJHShouldTerminateToken*)token;
+- (void)checkPending;
 @end
 
 @interface WJHShouldTerminateToken()
@@ -37,7 +37,7 @@
 }
 
 - (void)dealloc {
-    [shouldTerminate tokenWillDealloc:self];
+    [shouldTerminate checkPending];
 }
 
 @end

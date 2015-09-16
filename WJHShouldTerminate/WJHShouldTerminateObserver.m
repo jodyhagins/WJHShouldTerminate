@@ -1,14 +1,19 @@
 //
-//  _WJHShouldTerminateObserver.m
+//  WJHShouldTerminateObserver.m
 //  WJHShouldTerminate
 //
 //  Copyright (c) 2015 Jody Hagins. All rights reserved.
 //
 
-#import "_WJHShouldTerminateObserver.h"
+#import "WJHShouldTerminateObserver.h"
 #import "WJHShouldTerminate.h"
 
-@implementation _WJHShouldTerminateObserver {
+@interface WJHShouldTerminateObserver()
+- (instancetype)initWithBlock:(void (^)(WJHShouldTerminate *))block;
+@end
+
+
+@implementation WJHShouldTerminateObserver {
     __weak id observer;
 }
 
@@ -22,10 +27,15 @@
 }
 
 - (void)dealloc {
+    [self unregister];
+}
+
+- (void)unregister {
     id strongObserver = observer;
     if (strongObserver) {
         [[NSNotificationCenter defaultCenter] removeObserver:strongObserver];
     }
+    observer = nil;
 }
 
 @end

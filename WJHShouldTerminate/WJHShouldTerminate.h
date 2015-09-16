@@ -15,6 +15,7 @@ FOUNDATION_EXPORT double WJHShouldTerminateVersionNumber;
 FOUNDATION_EXPORT const unsigned char WJHShouldTerminateVersionString[];
 
 #import <WJHShouldTerminate/WJHShouldTerminateToken.h>
+#import <WJHShouldTerminate/WJHShouldTerminateObserver.h>
 #import <WJHShouldTerminate/NSObject+WJHShouldTerminate.h>
 
 
@@ -40,12 +41,11 @@ FOUNDATION_EXPORT const unsigned char WJHShouldTerminateVersionString[];
 /**
  Register a block that will be executed whenever a request to terminate the application is made.
 
- @param block the block that will be executed.  Must not be nil.
+ @param block the block that will be executed when the application has been requested to shotdown.  Must not be nil.
 
- @return An auto-released object that will automatically unregister the block when the object is deallocated.  As long as the returned object remains alive, the block will remain registered.  The returned object should be treated as opaque.
+ @return An auto-released object that will automatically unregister the block when the object is deallocated.  As long as the returned object remains alive, the block will remain registered.
  */
-+ (id)registerBlock:(void(^)(WJHShouldTerminate *st))block;
-
++ (WJHShouldTerminateObserver*)registerBlock:(void(^)(WJHShouldTerminate *st))block;
 
 /**
  Pause (or postpone) application termination.
