@@ -43,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		C852E0811BAA1AF7007D8486 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		C852E0821BAA203E007D8486 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		C852E0831BAA203E007D8486 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		C8B6C2B31B97AAD000D92BE6 /* WJHShouldTerminate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WJHShouldTerminate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B6C2B71B97AAD000D92BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8B6C2B81B97AAD000D92BE6 /* WJHShouldTerminate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WJHShouldTerminate.h; sourceTree = "<group>"; };
@@ -124,6 +126,8 @@
 		C8B6C2B61B97AAD000D92BE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C852E0821BAA203E007D8486 /* LICENSE.md */,
+				C852E0831BAA203E007D8486 /* README.md */,
 				C8B6C2B71B97AAD000D92BE6 /* Info.plist */,
 			);
 			name = "Supporting Files";
